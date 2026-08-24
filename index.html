@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MAGODI - Pakua mitihani ya shule za msingi Darasa la III hadi VII. Kiswahili, Hisabati, English, Sayansi na masomo mengine, bure kabisa.">
+<meta name="keywords" content="mitihani, shule za msingi, darasa la III, IV, V, VI, VII, Kiswahili, Hisabati, English, Sayansi, mitihani ya kupakua Tanzania">
+<meta name="author" content="MAGODI">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#073b4c">
+
+<!-- Open Graph / kushiriki mitandaoni -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MAGODI | Mitihani ya Shule za Msingi">
+<meta property="og:description" content="Pakua mitihani ya Darasa III - VII bure. Kiswahili, Hisabati, English, Sayansi na mengine.">
+<meta property="og:locale" content="sw_TZ">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon (emoji, hauitaji faili la picha) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
+<title>MAGODI | Mitihani ya Shule za Msingi</title>
+
+<!-- Data iliyoundwa kwa ajili ya injini za utafutaji (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "MAGODI",
+  "description": "Tovuti ya kupakua mitihani ya shule za msingi, Darasa III hadi VII.",
+  "areaServed": "Tanzania"
+}
+</script>
+
+<style>
+/* ========================= RESET / MSINGI ========================== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, Helvetica, sans-serif; }
+html { scroll-behavior: smooth; }
+:root {
+  --navy: #073b4c;
+  --navy-deep: #052b38;
+  --teal: #118ab2;
+  --gold: #ffd166;
+  --green: #06d6a0;
+  --green-deep: #04b889;
+  --whatsapp: #25D366;
+  --facebook: #1877F2;
+}
+body { background: #f4f7fb; color: #1f2937; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+a { text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+img { max-width: 100%; }
+
+/* Ufikiaji: onyesha lengo la kibodi kwa uwazi */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Kiungo cha kuruka moja kwa moja hadi maudhui (walemavu wa macho wanaotumia kibodi) */
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--gold); color: var(--navy); padding: 12px 20px;
+  font-weight: bold; z-index: 3000; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ========================= PROGRESS BAR YA KUSOMA ========================== */
+#progressBar {
+  position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+  z-index: 2000; transition: width 0.1s;
+}
+
+/* ========================= TANGAZO LA JUU ========================== */
+.announcement {
+  background: var(--gold); color: var(--navy); text-align: center;
+  padding: 10px 15px; font-weight: bold; font-size: 14px;
+  position: relative;
+}
+.announcement button {
+  position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; font-size: 18px; color: var(--navy);
+}
+
+/* ========================= HEADER ========================== */
+header { background: var(--navy); color: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 3px 15px rgba(0,0,0,0.15); }
+.navbar { max-width: 1200px; margin: auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 28px; font-weight: 900; letter-spacing: 1px; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
+.nav-links a { color: white; font-weight: bold; transition: 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+.menu-btn { display: none; background: none; border: none; color: white; font-size: 28px; }
+
+/* ========================= HERO ========================== */
+.hero { background: linear-gradient(135deg, var(--navy), var(--teal)); color: white; padding: 90px 20px; }
+.hero-content { max-width: 1100px; margin: auto; text-align: center; }
+.hero h1 { font-size: 55px; margin-bottom: 15px; }
+.hero h1 span { color: var(--gold); }
+.hero p { max-width: 750px; margin: auto; font-size: 19px; color: #e7f7ff; }
+.hero-buttons { margin-top: 30px; }
+.btn { display: inline-block; padding: 14px 25px; margin: 5px; border-radius: 30px; font-weight: bold; transition: 0.3s; }
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-primary:hover { transform: translateY(-3px); background: #ffca3a; }
+.btn-outline { border: 2px solid white; color: white; }
+.btn-outline:hover { background: white; color: var(--navy); }
+
+/* ========================= SEARCH + FILTER ========================== */
+.search-area { max-width: 850px; margin: -30px auto 40px; padding: 0 20px; position: relative; }
+.search-box { background: white; padding: 12px; border-radius: 50px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); display: flex; gap: 8px; }
+.search-box input { flex: 1; border: none; outline: none; padding: 12px 20px; font-size: 16px; background: transparent; color: inherit; }
+.search-box select { border: none; outline: none; padding: 12px 10px; font-size: 15px; background: transparent; color: inherit; }
+.search-box button { border: none; background: var(--green); color: white; padding: 0 25px; border-radius: 30px; font-weight: bold; }
+.search-box button:hover { background: var(--green-deep); }
+.result-count { text-align: center; color: #6b7280; font-size: 14px; margin-top: 10px; }
+
+/* ========================= GENERAL ========================== */
+section { padding: 70px 20px; }
+.container { max-width: 1150px; margin: auto; }
+.section-title { text-align: center; margin-bottom: 45px; }
+.section-title h2 { color: var(--navy); font-size: 36px; margin-bottom: 10px; }
+.section-title p { color: #6b7280; }
+
+/* Kufunua taratibu wakati wa kuscroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ========================= STATS (na hesabu ya kuongezeka) ========================== */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px; }
+.stat-card { background: white; padding: 25px; text-align: center; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.07); }
+.stat-card h3 { font-size: 32px; color: var(--teal); }
+.stat-card p { color: #6b7280; }
+
+/* ========================= CLASS CARDS ========================== */
+.classes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+.class-card { background: white; padding: 25px 10px; text-align: center; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.07); transition: 0.3s; }
+.class-card:hover { transform: translateY(-7px); }
+.class-icon { font-size: 35px; }
+.class-card h3 { color: var(--navy); margin: 8px 0; }
+.class-card a { display: inline-block; background: var(--teal); color: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; }
+
+/* ========================= SUBJECTS ========================== */
+.subjects { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.subject-card { background: white; padding: 25px; border-radius: 15px; border-left: 5px solid var(--teal); box-shadow: 0 5px 20px rgba(0,0,0,0.06); transition: 0.3s; }
+.subject-card:hover { transform: translateY(-5px); }
+.subject-card .icon { font-size: 35px; margin-bottom: 10px; }
+.subject-card h3 { color: var(--navy); margin-bottom: 8px; }
+.subject-card p { color: #6b7280; font-size: 14px; }
+
+/* ========================= EXAMS ========================== */
+.exam-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.exam-card { background: white; padding: 22px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 5px 20px rgba(0,0,0,0.06); position: relative; }
+.exam-info h3 { color: var(--navy); }
+.exam-info p { color: #6b7280; font-size: 14px; }
+.exam-actions { display: flex; gap: 8px; align-items: center; }
+.download-btn { background: var(--green); color: white; border: none; padding: 11px 18px; border-radius: 25px; font-weight: bold; }
+.download-btn:hover { background: var(--green-deep); }
+.share-btn { background: none; border: 2px solid var(--teal); color: var(--teal); width: 38px; height: 38px; border-radius: 50%; font-size: 15px; }
+.share-btn:hover { background: var(--teal); color: white; }
+.badge-new { position: absolute; top: -10px; left: 15px; background: #ef476f; color: white; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 12px; }
+.no-results { text-align: center; color: #6b7280; padding: 30px; display: none; }
+
+/* ========================= ABOUT ========================== */
+.about { background: var(--navy); color: white; }
+.about-content { max-width: 900px; margin: auto; text-align: center; }
+.about h2 { font-size: 36px; margin-bottom: 20px; }
+.about p { color: #dcecf2; margin-bottom: 15px; }
+
+/* ========================= MAONI (TESTIMONIALS) ========================== */
+.testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.testimonial-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); }
+.testimonial-card p.quote { font-style: italic; color: #374151; margin-bottom: 15px; }
+.testimonial-card .stars { color: var(--gold); margin-bottom: 10px; }
+.testimonial-author { font-weight: bold; color: var(--navy); font-size: 14px; }
+.testimonial-role { color: #6b7280; font-size: 13px; }
+
+/* ========================= MASWALI (FAQ) ========================== */
+.faq-list { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: white; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.06); overflow: hidden; }
+.faq-question { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-weight: bold; color: var(--navy); display: flex; justify-content: space-between; align-items: center; font-size: 16px; }
+.faq-question .icon-plus { transition: transform 0.3s; color: var(--teal); font-size: 20px; }
+.faq-item.open .faq-question .icon-plus { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 22px; color: #6b7280; }
+.faq-item.open .faq-answer { max-height: 300px; padding: 0 22px 18px; }
+
+/* ========================= SOCIAL ========================== */
+.social { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+.social a { padding: 13px 25px; border-radius: 30px; color: white; font-weight: bold; }
+.whatsapp { background: var(--whatsapp); }
+.instagram { background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5); }
+.facebook { background: var(--facebook); }
+
+/* ========================= FOOTER ========================== */
+footer { background: var(--navy-deep); color: white; padding: 50px 20px 25px; }
+.footer-grid { max-width: 1150px; margin: auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; text-align: left; }
+.footer-col h4 { color: var(--gold); margin-bottom: 15px; font-size: 16px; }
+.footer-col p, .footer-col a { color: #b8cdd4; display: block; margin-bottom: 10px; font-size: 14px; }
+.footer-col a:hover { color: white; }
+.footer-brand .logo { margin-bottom: 10px; }
+.copyright { max-width: 1150px; margin: 30px auto 0; padding-top: 20px; border-top: 1px solid #315461; font-size: 14px; text-align: center; color: #b8cdd4; }
+
+/* ========================= DARK MODE ========================== */
+body.dark { background: #111827; color: #f9fafb; }
+body.dark .stat-card, body.dark .class-card, body.dark .subject-card,
+body.dark .exam-card, body.dark .search-box, body.dark .testimonial-card,
+body.dark .faq-item { background: #1f2937; color: white; }
+body.dark .section-title h2, body.dark .class-card h3, body.dark .subject-card h3,
+body.dark .exam-info h3, body.dark .faq-question, body.dark .testimonial-author { color: white; }
+body.dark .section-title p, body.dark .subject-card p, body.dark .exam-info p,
+body.dark .testimonial-role, body.dark .faq-answer, body.dark .result-count { color: #cbd5e1; }
+body.dark .announcement { background: #3d3116; color: var(--gold); }
+
+.dark-btn, .top-btn {
+  position: fixed; right: 20px; width: 50px; height: 50px; border: none;
+  border-radius: 50%; background: var(--navy); color: white; font-size: 20px;
+  z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+.dark-btn { bottom: 20px; }
+.top-btn { bottom: 85px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.top-btn.show { opacity: 1; pointer-events: auto; }
+
+/* ========================= MOBILE ========================== */
+@media (max-width: 900px) {
+  .subjects { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .classes { grid-template-columns: repeat(3, 1fr); }
+  .testimonials { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 650px) {
+  .navbar { flex-wrap: wrap; }
+  .menu-btn { display: block; }
+  .nav-links { display: none; width: 100%; flex-direction: column; text-align: center; padding-top: 15px; }
+  .nav-links.active { display: flex; }
+  .hero { padding: 70px 20px; }
+  .hero h1 { font-size: 38px; }
+  .hero p { font-size: 16px; }
+  .search-box { flex-wrap: wrap; border-radius: 15px; }
+  .search-box button { padding: 10px 15px; width: 100%; }
+  .subjects { grid-template-columns: 1fr; }
+  .classes { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .exam-list { grid-template-columns: 1fr; }
+  .exam-card { flex-direction: column; align-items: flex-start; gap: 15px; }
+  .download-btn { width: 100%; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<a href="#mitihani" class="skip-link">Ruka hadi maudhui makuu</a>
+<div id="progressBar"></div>
+
+<!-- ========================= TANGAZO ========================== -->
+<div class="announcement" id="announcement">
+  🎉 Mitihani mipya ya Darasa VII yameongezwa wiki hii — <a href="#mitihani" style="text-decoration:underline; color:var(--navy);">angalia sasa</a>
+  <button onclick="document.getElementById('announcement').style.display='none'" aria-label="Funga tangazo">✕</button>
+</div>
+
+<!-- ========================= HEADER ========================== -->
+<header>
+<nav class="navbar">
+  <div class="logo">MAGODI<span>.</span></div>
+  <button class="menu-btn" onclick="funguaMenu()" aria-label="Fungua menyu" aria-expanded="false">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#madarasa">Madarasa</a></li>
+    <li><a href="#masomo">Masomo</a></li>
+    <li><a href="#mitihani">Mitihani</a></li>
+    <li><a href="#maoni">Maoni</a></li>
+    <li><a href="#maswali">Maswali</a></li>
+    <li><a href="#kuhusu">Kuhusu</a></li>
+    <li><a href="#wasiliana">Wasiliana</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- ========================= HERO ========================== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Karibu <span>MAGODI</span></h1>
+    <p>Pakua mitihani ya shule za msingi, Darasa III hadi VII, bure kabisa. Jifunze, fanya mazoezi, faulu.</p>
+    <div class="hero-buttons">
+      <a href="#mitihani" class="btn btn-primary">📥 Pakua Mitihani</a>
+      <a href="#masomo" class="btn btn-outline">📚 Angalia Masomo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SEARCH + FILTER ========================== -->
+<div class="search-area">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔎 Tafuta mtihani, somo au darasa..." onkeyup="tafutaMtihani()" aria-label="Tafuta mtihani">
+    <select id="classFilter" onchange="tafutaMtihani()" aria-label="Chuja kwa darasa">
+      <option value="">Madarasa Yote</option>
+      <option value="darasa iii">Darasa III</option>
+      <option value="darasa iv">Darasa IV</option>
+      <option value="darasa v">Darasa V</option>
+      <option value="darasa vi">Darasa VI</option>
+      <option value="darasa vii">Darasa VII</option>
+    </select>
+    <button onclick="tafutaMtihani()">Tafuta</button>
+  </div>
+  <p class="result-count" id="resultCount"></p>
+</div>
+
+<!-- ========================= STATS ========================== -->
+<section>
+  <div class="container">
+    <div class="stats reveal">
+      <div class="stat-card"><h3 data-count="5">0</h3><p>Madarasa</p></div>
+      <div class="stat-card"><h3 data-count="8">0</h3><p>Masomo</p></div>
+      <div class="stat-card"><h3 data-count="100" data-suffix="+">0</h3><p>Mitihani</p></div>
+      <div class="stat-card"><h3 data-count="100" data-suffix="%">0</h3><p>Rahisi Kutumia</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MADARASA ========================== -->
+<section id="madarasa">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>📚 Chagua Darasa</h2>
+      <p>Chagua darasa unalotaka kupata mitihani.</p>
+    </div>
+    <div class="classes reveal">
+      <div class="class-card"><div class="class-icon">🎒</div><h3>Darasa III</h3><a href="#mitihani">Angalia</a></div>
+      <div class="class-card"><div class="class-icon">📘</div><h3>Darasa IV</h3><a href="#mitihani">Angalia</a></div>
+      <div class="class-card"><div class="class-icon">📗</div><h3>Darasa V</h3><a href="#mitihani">Angalia</a></div>
+      <div class="class-card"><div class="class-icon">📙</div><h3>Darasa VI</h3><a href="#mitihani">Angalia</a></div>
+      <div class="class-card"><div class="class-icon">🎓</div><h3>Darasa VII</h3><a href="#mitihani">Angalia</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MASOMO ========================== -->
+<section id="masomo">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>📖 Masomo</h2>
+      <p>Chagua somo unalotaka.</p>
+    </div>
+    <div class="subjects reveal">
+      <div class="subject-card"><div class="icon">📝</div><h3>Kiswahili</h3><p>Mitihani ya Kiswahili kwa Darasa III - VII.</p></div>
+      <div class="subject-card"><div class="icon">🔢</div><h3>Hisabati</h3><p>Mazoezi na mitihani ya Hisabati kwa shule za msingi.</p></div>
+      <div class="subject-card"><div class="icon">🇬🇧</div><h3>English</h3><p>Mitihani ya English kwa Darasa III - VII.</p></div>
+      <div class="subject-card"><div class="icon">🔬</div><h3>Sayansi</h3><p>Mitihani ya Sayansi kwa wanafunzi wa shule za msingi.</p></div>
+      <div class="subject-card"><div class="icon">🇹🇿</div><h3>Historia ya Tanzania</h3><p>Mitihani na mazoezi ya Historia ya Tanzania.</p></div>
+      <div class="subject-card"><div class="icon">🌍</div><h3>Jiografia na Mazingira</h3><p>Mitihani ya Jiografia na Mazingira.</p></div>
+      <div class="subject-card"><div class="icon">🤝</div><h3>Uraia na Maadili</h3><p>Mitihani ya Uraia na Maadili kwa shule za msingi.</p></div>
+      <div class="subject-card"><div class="icon">👨‍👩‍👧‍👦</div><h3>Maarifa ya Jamii</h3><p>Mitihani ya Maarifa ya Jamii kwa Darasa III - VII.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MITIHANI ========================== -->
+<section id="mitihani">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>📥 Mitihani ya Kupakua</h2>
+      <p>Bonyeza "Pakua" kupata mtihani, au "Tuma" kumtumia rafiki kwa WhatsApp.</p>
+    </div>
+    <div class="exam-list reveal" id="examList">
+      <div class="exam-card" data-new="true">
+        <span class="badge-new">MPYA</span>
+        <div class="exam-info"><h3>Kiswahili - Darasa III</h3><p>Mtihani wa Kiswahili | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std3/kiswahili.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('Kiswahili - Darasa III')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+      <div class="exam-card">
+        <div class="exam-info"><h3>Hisabati - Darasa IV</h3><p>Mtihani wa Hisabati | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std4/hisabati.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('Hisabati - Darasa IV')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+      <div class="exam-card">
+        <div class="exam-info"><h3>English - Darasa V</h3><p>English Examination | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std5/english.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('English - Darasa V')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+      <div class="exam-card">
+        <div class="exam-info"><h3>Sayansi - Darasa VI</h3><p>Mtihani wa Sayansi | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std6/sayansi.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('Sayansi - Darasa VI')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+      <div class="exam-card" data-new="true">
+        <span class="badge-new">MPYA</span>
+        <div class="exam-info"><h3>Historia ya Tanzania - Darasa VII</h3><p>Mtihani wa Historia | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std7/historia.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('Historia ya Tanzania - Darasa VII')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+      <div class="exam-card" data-new="true">
+        <span class="badge-new">MPYA</span>
+        <div class="exam-info"><h3>Jiografia na Mazingira - Darasa VII</h3><p>Mtihani wa Jiografia | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std7/jiografia.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('Jiografia na Mazingira - Darasa VII')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+      <div class="exam-card">
+        <div class="exam-info"><h3>Uraia na Maadili - Darasa VI</h3><p>Mtihani wa Uraia | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std6/uraia.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('Uraia na Maadili - Darasa VI')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+      <div class="exam-card">
+        <div class="exam-info"><h3>Maarifa ya Jamii - Darasa V</h3><p>Mtihani wa Maarifa ya Jamii | PDF</p></div>
+        <div class="exam-actions">
+          <a href="mitihani/std5/maarifa-jamii.pdf" class="download-btn" download>📥 Pakua</a>
+          <button class="share-btn" onclick="tumaWhatsapp('Maarifa ya Jamii - Darasa V')" aria-label="Tuma kwa WhatsApp">↗</button>
+        </div>
+      </div>
+    </div>
+    <p class="no-results" id="noResults">Hakuna mtihani uliopatikana. Jaribu neno lingine.</p>
+  </div>
+</section>
+
+<!-- ========================= ABOUT ========================== -->
+<section class="about" id="kuhusu">
+  <div class="about-content reveal">
+    <h2>Kuhusu MAGODI</h2>
+    <p>MAGODI ni tovuti inayolenga kurahisisha upatikanaji wa mitihani na nyenzo za kujifunzia kwa wanafunzi wa shule za msingi.</p>
+    <p>Tovuti hii inalenga kuwasaidia wanafunzi, walimu na wazazi kupata nyenzo za mazoezi kwa urahisi.</p>
+    <p>Tunajikita katika Darasa la III hadi Darasa la VII na masomo mbalimbali ya shule za msingi.</p>
+  </div>
+</section>
+
+<!-- ========================= MAONI YA WATUMIAJI ========================== -->
+<section id="maoni">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>💬 Wanachosema Watumiaji</h2>
+      <p>Maoni kutoka kwa wanafunzi, walimu na wazazi.</p>
+    </div>
+    <div class="testimonials reveal">
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="quote">"Mitihani hii imenisaidia sana kujiandaa kwa mtihani wangu wa mwisho wa mwaka."</p>
+        <div class="testimonial-author">Amina J.</div>
+        <div class="testimonial-role">Mwanafunzi, Darasa VII</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="quote">"Nazitumia kama nyenzo za ziada darasani. Zimepangwa vizuri kwa kila somo na darasa."</p>
+        <div class="testimonial-author">Mwl. Rajabu M.</div>
+        <div class="testimonial-role">Mwalimu wa Shule ya Msingi</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="quote">"Rahisi kutumia na mtoto wangu anaweza kupakua peke yake. Asante MAGODI."</p>
+        <div class="testimonial-author">Neema K.</div>
+        <div class="testimonial-role">Mzazi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MASWALI YANAYOULIZWA MARA KWA MARA ========================== -->
+<section id="maswali">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>❓ Maswali Yanayoulizwa Mara kwa Mara</h2>
+      <p>Huenda majibu uliyoyahitaji yapo hapa.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" onclick="fungyaFaq(this)">Je, mitihani yote ni bure?<span class="icon-plus">+</span></button>
+        <div class="faq-answer"><p>Ndiyo, mitihani yote kwenye MAGODI inapakuliwa bure kabisa, hakuna malipo yoyote.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="fungyaFaq(this)">Ninawezaje kupakua mtihani?<span class="icon-plus">+</span></button>
+        <div class="faq-answer"><p>Nenda sehemu ya "Mitihani", tafuta mtihani unaotaka kwa jina la somo au darasa, kisha bonyeza kitufe cha "Pakua".</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="fungyaFaq(this)">Je, mitihani mipya huongezwa lini?<span class="icon-plus">+</span></button>
+        <div class="faq-answer"><p>Tunaongeza mitihani mipya mara kwa mara. Fuatilia tangazo juu ya ukurasa au mitandao yetu ya kijamii kupata taarifa.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="fungyaFaq(this)">Naweza kutuma mtihani wangu kuchapishwa MAGODI?<span class="icon-plus">+</span></button>
+        <div class="faq-answer"><p>Ndiyo, wasiliana nasi kupitia WhatsApp au mitandao yetu ya kijamii ili kupendekeza au kutuma mitihani.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SOCIAL MEDIA ========================== -->
+<section id="wasiliana">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>📱 Wasiliana Nasi</h2>
+      <p>Tufuate kwenye mitandao yetu ya kijamii.</p>
+    </div>
+    <div class="social reveal">
+      <a href="https://wa.me/255766265800" target="_blank" rel="noopener" class="whatsapp">💬 WhatsApp</a>
+      <a href="https://www.instagram.com/magodijr" target="_blank" rel="noopener" class="instagram">📸 Instagram</a>
+      <a href="https://www.facebook.com/musserdeko" target="_blank" rel="noopener" class="facebook">👍 Facebook</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <div class="logo">MAGODI<span>.</span></div>
+      <p>Mitihani ya Shule za Msingi | Darasa III - VII</p>
+      <p>Jifunze • Fanya Mazoezi • Faulu</p>
+    </div>
+    <div class="footer-col">
+      <h4>Viungo</h4>
+      <a href="#madarasa">Madarasa</a>
+      <a href="#masomo">Masomo</a>
+      <a href="#mitihani">Mitihani</a>
+      <a href="#kuhusu">Kuhusu Sisi</a>
+    </div>
+    <div class="footer-col">
+      <h4>Wasiliana</h4>
+      <a href="https://wa.me/255766265800" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/magodijr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/musserdeko" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 MAGODI. Haki zote zimehifadhiwa.</div>
+</footer>
+
+<button class="dark-btn" onclick="darkMode()" title="Badilisha muonekano" aria-label="Badilisha kati ya mwanga na giza">🌙</button>
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Rudi juu">⬆</button>
+
+<script>
+/* ========================= MENU YA SIMU ========================== */
+function funguaMenu() {
+  const links = document.getElementById("navLinks");
+  const btn = document.querySelector(".menu-btn");
+  links.classList.toggle("active");
+  btn.setAttribute("aria-expanded", links.classList.contains("active"));
+}
+
+/* ========================= DARK MODE (inakumbuka chaguo lako) ========================== */
+function wekaDarkMode(washa) {
+  document.body.classList.toggle("dark", washa);
+  localStorage.setItem("magodi-dark", washa ? "1" : "0");
+}
+function darkMode() {
+  wekaDarkMode(!document.body.classList.contains("dark"));
+}
+(function anzishaDarkMode() {
+  const saved = localStorage.getItem("magodi-dark");
+  if (saved === "1") { wekaDarkMode(true); }
+  else if (saved === null && window.matchMedia("(prefers-color-scheme: dark)").matches) { wekaDarkMode(true); }
+})();
+
+/* ========================= SEARCH + FILTER YA DARASA ========================== */
+function tafutaMtihani() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const filterDarasa = document.getElementById("classFilter").value;
+  const exams = document.querySelectorAll(".exam-card");
+  let idadi = 0;
+  exams.forEach(function (exam) {
+    const text = exam.innerText.toLowerCase();
+    const inafaaManeno = text.includes(input);
+    const inafaaDarasa = !filterDarasa || text.includes(filterDarasa);
+    if (inafaaManeno && inafaaDarasa) {
+      exam.style.display = "flex";
+      idadi++;
+    } else {
+      exam.style.display = "none";
+    }
+  });
+  document.getElementById("resultCount").textContent = "Inaonyesha " + idadi + " kati ya " + exams.length + " mitihani";
+  document.getElementById("noResults").style.display = idadi === 0 ? "block" : "none";
+}
+
+/* ========================= TUMA MTIHANI KWA WHATSAPP ========================== */
+function tumaWhatsapp(jinaLaMtihani) {
+  const ujumbe = encodeURIComponent("Angalia mtihani huu kwenye MAGODI: " + jinaLaMtihani + " - " + window.location.href);
+  window.open("https://wa.me/?text=" + ujumbe, "_blank");
+}
+
+/* ========================= UJUMBE BAADA YA KUPAKUA ========================== */
+document.querySelectorAll(".download-btn").forEach(function (button) {
+  button.addEventListener("click", function () {
+    setTimeout(function () {
+      alert("Mtihani umechaguliwa kwa ajili ya kupakuliwa. Asante kwa kutumia MAGODI!");
+    }, 500);
+  });
+});
+
+/* ========================= FAQ ACCORDION ========================== */
+function fungyaFaq(button) {
+  const item = button.parentElement;
+  const ilikuwaWazi = item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(el => el.classList.remove("open"));
+  if (!ilikuwaWazi) item.classList.add("open");
+}
+
+/* ========================= PROGRESS BAR YA KUSOMA ========================== */
+window.addEventListener("scroll", function () {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById("progressBar").style.width = scrolled + "%";
+
+  const topBtn = document.getElementById("topBtn");
+  topBtn.classList.toggle("show", h.scrollTop > 400);
+});
+
+/* ========================= KUFUNUA WAKATI WA SCROLL ========================== */
+const waangalizi = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll(".reveal").forEach(el => waangalizi.observe(el));
+
+/* ========================= HESABU YA TAKWIMU (COUNT-UP) ========================== */
+function hesabuTakwimu(el) {
+  const lengo = parseInt(el.dataset.count, 10);
+  const kiambishi = el.dataset.suffix || "";
+  let sasa = 0;
+  const hatua = Math.max(1, Math.ceil(lengo / 40));
+  const muda = setInterval(function () {
+    sasa += hatua;
+    if (sasa >= lengo) { sasa = lengo; clearInterval(muda); }
+    el.textContent = sasa + kiambishi;
+  }, 30);
+}
+const statObserver = new IntersectionObserver(function (entries, obs) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      hesabuTakwimu(entry.target);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll(".stat-card h3[data-count]").forEach(el => statObserver.observe(el));
+</script>
+</body>
+</html>
